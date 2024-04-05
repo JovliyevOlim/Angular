@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Asosiy</a>
+      </li>
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/darslar" >Darslar</a>
+      </li>
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" [routerLink]="['/darslar',2,'Web API']" [queryParams]="{page:1,order:'desc'}" >Web API</a>
+      </li>
+      <li class="nav-item">
+        <a routerLinkActive="active" class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/boglanish" >Boglanish</a>
+      </li>
+    </ul>
+  </div>
+</nav>

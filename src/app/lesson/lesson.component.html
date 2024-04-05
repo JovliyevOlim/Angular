@@ -1,0 +1,12 @@
+<ng-container *ngIf="lesson">
+  <ng-content select=".my-content"></ng-content>
+  Dars nomi :{{lesson?.title | uppercase | lowercase}} <br>
+  Narx :{{lesson?.price | currency:'USD'}} <br>
+  Davomiylik (soat):{{lesson?.duration | number}} <br />
+  Yopilish sanasi:{{lesson?.intakeDeadline | date}}<br>
+  <br>
+  <button (click)="onPlusButtonClick()">+</button>
+  <button (click)="onMinusButtonClick()">-</button>
+  <ng-content select="h2"></ng-content>
+
+</ng-container>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div *ngIf="form.errors" class="alert alert-danger">Login yoki parol noto'g'ri</div>
+  <form [formGroup]="form" (ngSubmit)="signIn()">
+    <div formGroupName="account">
+      <div class="form-check">
+        <label for="login">Login</label>
+        <input
+        formControlName="login"
+        type="text"
+        id="login"
+        class="form-control"
+        >
+        <div *ngIf="login?.pending">Tekshirilyapti....</div>
+        <div *ngIf="login?.touched && login?.invalid" class="alert alert-danger">
+          <div *ngIf="login.errors.required">Loginni kiritish majburiy</div>
+          <div *ngIf="login.errors.minlength">Login kamida {{login.errors.minlength.requiredLength}} bo'lishi kerak</div>
+          <div *ngIf="login.errors.noSpace">Loginda probel bo'lmasligi kerak</div>
+          <div *ngIf="login.errors.isTaken">Bu login band</div>
+        </div>
+    </div>
+    </div>
+
+    <div class="form-check">
+      <label for="password">Kalit so'z</label>
+      <input
+      formControlName="password"
+      type="password"
+      id="password"
+      class="form-control"
+      >
+  </div>
+  <button class="btn btn-primary form-check" type="submit">Ro'yhatdan o'tish</button>
+  {{form.value | json}}
+  </form>
+</div>

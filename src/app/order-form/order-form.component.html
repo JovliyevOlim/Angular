@@ -1,0 +1,21 @@
+<div>
+  <button (click)="addItem()">Yangi buyurtma</button>
+</div>
+<div [formGroup]="orderForm">
+  <label for="">Mijoz ismi</label>
+  <input formControlName="customerName">
+  <div formArrayName="items" *ngFor="let item of orderForm.get('items')?.controls; let i=index;">
+
+    Buyurtma # {{i+1}} {{orderForm.controls.items.controls[i].controls.name.value}}
+    <div [formGroupName]="i">
+
+ <label for="">Nomi:</label>
+ <input type="text" formControlName="name">
+
+<br>
+ <label for="">Narxi:</label>
+ <input type="text" formControlName="price">
+    </div>
+
+  </div>
+</div>
